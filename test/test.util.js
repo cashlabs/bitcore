@@ -7,6 +7,21 @@ var should = chai.should();
 var buffertools = require('buffertools');
 
 describe('util', function() {
+  describe('sha512', function() {
+    it('should calculate this particular hash correctly', function() {
+      var data = new Buffer('test data');
+      var hash = coinUtil.sha512(data);
+      hash.toString('hex').should.equal('0e1e21ecf105ec853d24d728867ad70613c21663a4693074b2a3619c1bd39d66b588c33723bb466c72424e80e3ca63c249078ab347bab9428500e7ee43059d0d');
+    });
+  });
+  describe('sha512hmac', function() {
+    it('should calculate the value of this sha512hmac correctly', function() {
+      var data = new Buffer('data');
+      var key = new Buffer('key');
+      var mac = coinUtil.sha512hmac(data, key);
+      mac.toString('hex').should.equal('3c5953a18f7303ec653ba170ae334fafa08e3846f2efe317b87efce82376253cb52a8c31ddcde5a3a2eee183c2b34cb91f85e64ddbc325f7692b199473579c58');
+    });
+  });
   describe('exist', function() {
     it('should initialze the util object', function() {
       should.exist(bitcore.util);
@@ -57,7 +72,7 @@ describe('util', function() {
 
   describe('#twoSha256', function() {
     var data = new Buffer('907c2bc503ade11cc3b04eb2918b6f547b0630ab569273824748c87ea14b0696526c66ba740200000000fd1f9bdd4ef073c7afc4ae00da8a66f429c917a0081ad1e1dabce28d373eab81d8628de80200000000ad042b5f25efb33beec9f3364e8a9139e8439d9d7e26529c3c30b6c3fd89f8684cfd68ea0200000000599ac2fe02a526ed040000000008535300516352515164370e010000000003006300ab2ec2291fe51c6f', 'hex');
-    it('should work for ' + data, function() {
+    it('should work for ' + data.toString('hex'), function() {
       var twoSha256 = buffertools.toHex(buffertools.reverse(coinUtil.twoSha256(data)));
       var expected = '31af167a6cf3f9d5f6875caa4d31704ceb0eba078d132b78dab52c3b8997317e';
       twoSha256.should.equal(expected);

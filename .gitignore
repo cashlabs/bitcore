@@ -1,7 +1,4 @@
 build/
-browser/bundle.js
-browser/vendor-bundle.js
-browser/testdata.js
 node_modules/
 *.swp
 *.swo
@@ -13,3 +10,4 @@ tags
 coverage
 .DS_Store
 docs
+browser/bitcore-dev.js
