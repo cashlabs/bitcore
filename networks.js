@@ -128,3 +128,60 @@ exports.demtest = {
 		  ],
 		  defaultClientPort: 18333
 		};
+exports.ltclive = {
+		  name: 'ltclive',
+		  magic: hex('fbc0b6db'),
+
+/*
+        PUBKEY_ADDRESS = 48, // Litecoin addresses start with L
+        SCRIPT_ADDRESS = 5,
+        PUBKEY_ADDRESS_TEST = 111,
+        SCRIPT_ADDRESS_TEST = 196,
+*/
+
+		  addressVersion: 48,
+		  privKeyVersion: 241,     /// not sure.. 239,
+		  P2SHVersion: 5,
+		  hkeyPublicVersion: 0x043587cf,
+		  hkeyPrivateVersion: 0x04358394,
+		  genesisBlock: {
+		    hash: hex('e2bf047e7e5a191aa4ef34d314979dc9986e0f19251edaba5940fd1fe365a712'),
+		    merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+		    height: 0,
+		    nonce: 414098458,
+		    version: 1,
+		    prev_hash: buffertools.fill(new Buffer(32), 0),
+		    timestamp: 1296688602,
+		    bits: 486604799,
+		  },
+		  dnsSeeds: [
+		    'testnet-seed.bitcoin.petertodd.org',
+		    'testnet-seed.bluematt.me'
+		  ],
+		  defaultClientPort: 18333
+		};
+exports.dogelive = {
+		  name: 'dogelive',
+		  magic: hex('c0c0c0c0'),
+		  addressVersion: 30 ,
+		  privKeyVersion: 158,     /// not sure.. 239,
+		  P2SHVersion: 22 ,
+		  hkeyPublicVersion: 0x043587cf,
+		  hkeyPrivateVersion: 0x04358394,
+		  genesisBlock: {
+		    hash: hex('9156352c1818b32e90c9e792efd6a11a82fe7956a630f03bbee236cedae3911a'),
+		    merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+		    height: 0,
+		    nonce: 414098458,
+		    version: 1,
+		    prev_hash: buffertools.fill(new Buffer(32), 0),
+		    timestamp: 1296688602,
+		    bits: 486604799,
+		  },
+		  dnsSeeds: [
+		    'testnet-seed.bitcoin.petertodd.org',
+		    'testnet-seed.bluematt.me'
+		  ],
+		  defaultClientPort: 18333
+		};
+
