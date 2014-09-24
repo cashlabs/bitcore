@@ -1,4 +1,5 @@
-var Put = require('bufferput');
+'use strict';
+//var Put = require('bufferput');
 var buffertools = require('buffertools');
 var hex = function(hex) {
     return new Buffer(hex, 'hex');
@@ -106,30 +107,6 @@ exports.ltctest = {
     ],
     defaultClientPort: 18333
 };
-exports.demtest = {
-    name: 'demtest',
-    magic: hex('fcc1b7dc'),
-    addressVersion: 113,
-    privKeyVersion: 241, /// not sure.. 239,
-    P2SHVersion: 196,
-    hkeyPublicVersion: 0x043587cf,
-    hkeyPrivateVersion: 0x04358394,
-    genesisBlock: {
-        hash: hex('2159d1d38f3f5b2b584f40d4cd74be61ff2bbd619db239401bc5be8327fa0000'),
-        merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
-        height: 0,
-        nonce: 414098458,
-        version: 1,
-        prev_hash: buffertools.fill(new Buffer(32), 0),
-        timestamp: 1296688602,
-        bits: 486604799,
-    },
-    dnsSeeds: [
-        'testnet-seed.bitcoin.petertodd.org',
-        'testnet-seed.bluematt.me'
-    ],
-    defaultClientPort: 18333
-};
 exports.ltclive = {
     name: 'ltclive',
     magic: hex('fbc0b6db'),
@@ -172,6 +149,54 @@ exports.dogelive = {
     hkeyPrivateVersion: 0x04358394,
     genesisBlock: {
         hash: hex('9156352c1818b32e90c9e792efd6a11a82fe7956a630f03bbee236cedae3911a'),
+        merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+        height: 0,
+        nonce: 414098458,
+        version: 1,
+        prev_hash: buffertools.fill(new Buffer(32), 0),
+        timestamp: 1296688602,
+        bits: 486604799,
+    },
+    dnsSeeds: [
+        'testnet-seed.bitcoin.petertodd.org',
+        'testnet-seed.bluematt.me'
+    ],
+    defaultClientPort: 18333
+};
+exports.demlive = {
+    name: 'demlive',
+    magic: hex('e4e8e9e5'),
+    addressVersion: 111,
+    privKeyVersion: 241, /// not sure.. 239,
+    P2SHVersion: 196,
+    hkeyPublicVersion: 0x043587cf,
+    hkeyPrivateVersion: 0x04358394,
+    genesisBlock: {
+        hash: hex('00000ac7a13fffb72c10f6fd9a773dcf3e8388b8ffc359cee2483b1236ebcda1'),
+        merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+        height: 0,
+        nonce: 414098458,
+        version: 1,
+        prev_hash: buffertools.fill(new Buffer(32), 0),
+        timestamp: 1296688602,
+        bits: 486604799,
+    },
+    dnsSeeds: [
+        'testnet-seed.bitcoin.petertodd.org',
+        'testnet-seed.bluematt.me'
+    ],
+    defaultClientPort: 18333
+};
+exports.demtest = {
+    name: 'demtest',
+    magic: hex('cdf2c0ef'),
+    addressVersion: 111,
+    privKeyVersion: 241, /// not sure.. 239,
+    P2SHVersion: 196,
+    hkeyPublicVersion: 0x043587cf,
+    hkeyPrivateVersion: 0x04358394,
+    genesisBlock: {
+        hash: hex('2159d1d38f3f5b2b584f40d4cd74be61ff2bbd619db239401bc5be8327fa0000'),
         merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
         height: 0,
         nonce: 414098458,
