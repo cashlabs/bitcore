@@ -1,7 +1,7 @@
 {
   "name": "bitcore",
   "description": "Bitcoin Library",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "author": {
     "name": "Stephen Pair",
     "email": "stephen@bitpay.com"
@@ -49,7 +49,7 @@
     "install": "node-gyp rebuild",
     "test": "node browser/build.js -a && node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter spec test",
-    "prepublish": "node browser/build.js -m"
+    "prepublish": "node browser/build.js -a"
   },
   "dependencies": {
     "grunt-browserify": "~2.0.0",
@@ -104,6 +104,7 @@
   },
   "browser": {
     "bignum": "./lib/browser/Bignum.js",
+    "buffertools": "browserify-buffertools",
     "./lib/Key.js": "./lib/browser/Key.js",
     "./lib/Point.js": "./lib/browser/Point.js",
     "./lib/ECIES.js": "./lib/browser/ECIES.js",
